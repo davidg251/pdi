@@ -1,0 +1,11 @@
+#imagenes
+*.png
+*.jpg
+*.bmp
+*.pgm
+
+#compilados
+*.exe
+*.o
+*.so
+*.com
