@@ -10,10 +10,10 @@ int main(int argc,char *argv[])
     return 1;
     }
 
-    Imagen I(50,50);
+    //Imagen I(50,50);
+    Imagen I;
     I.lee(argv[1]);
-    I.umbral();
     I.escribe("imagen.bmp");
-    cout << I.getpixel(100,125) << endl;
+    //cout << I.getpixel(100,125) << endl;
     return 0;
 }

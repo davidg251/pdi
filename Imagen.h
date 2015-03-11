@@ -21,8 +21,6 @@ class Imagen
         void setpixel(int i, int j, int valor){
             _pixels[j*_ancho+i] = valor;
         }
-        void umbral();
-        void umbralInvertido();
         void lee(std::string nombrefichero);
         void escribe(std::string nombrefichero)const;
     protected:
