@@ -3,7 +3,7 @@
 *.jpg
 *.bmp
 *.pgm
-
+*.out
 #compilados
 *.exe
 *.o
