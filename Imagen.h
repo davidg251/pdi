@@ -30,6 +30,7 @@ class Imagen
         }
 
         void suma(Imagen,std::string);
+        void multiplicacion(Imagen,std::string);
         void lee(std::string nombrefichero);
         void escribe(std::string nombrefichero)const;
     protected:

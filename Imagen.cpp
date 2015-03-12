@@ -76,3 +76,14 @@ void Imagen::suma(Imagen i1, string nombrearchivo){
     temp.escribe(nombrearchivo);
 
 }
+
+void Imagen::multiplicacion(Imagen i1, string nombrearchivo){
+    Imagen temp(_ancho, _alto);
+    for(int i=0; i < _pixels.size();i++)
+      {
+        temp.setpixel(i, _pixels[i]*i1.getpixel(i) ) ;
+      }
+
+    temp.escribe(nombrearchivo);
+
+}

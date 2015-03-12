@@ -12,6 +12,16 @@ void pruebasuma()
 
 }
 
+void pruebamultiplicacion()
+{
+  Imagen I;
+  Imagen I2;
+  I.lee("figura4.pgm");
+  I2.lee("cuadro.pgm");
+  I.multiplicacion(I2, "multi4y5.pgm");
+
+}
+
 int main(int argc,char *argv[])
 {
     /*
@@ -25,6 +35,7 @@ int main(int argc,char *argv[])
 
     I.escribe("imagen.pgm");
     */
-    pruebasuma();
+    //pruebasuma();
+    pruebamultiplicacion();
     return 0;
 }
