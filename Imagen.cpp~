@@ -104,7 +104,7 @@ void Imagen::constante(double c)
 void Imagen::sintetica()
 {
 	
-    for(int i=0; i < 20000 ;i++)
+    for(int i=0; i < 4000 ;i++)
       {
         _pixels[i] = 1;
       }

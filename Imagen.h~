@@ -21,7 +21,6 @@ class Imagen
 		void setpixel(int i, int j, int valor){_pixels[j*_ancho+i] = valor;}
         void setpixel(int i, int valor){_pixels[i] = valor;}
         
-		void sintetica();
 		void constante(double);
         void suma(Imagen,std::string);
         void multiplicacion(Imagen,std::string);

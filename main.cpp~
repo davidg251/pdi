@@ -27,7 +27,6 @@ void pruebamultiplicacion()
   Imagen I2(225,225);
   I2.sintetica();	
   I.lee("perro.pgm");
-  I2.escribe("otro.pgm");
   //I2.escribe("otro.pgm");
   I.multiplicacion(I2, "multi4y5.pgm");
 
