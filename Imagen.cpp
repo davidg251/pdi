@@ -44,7 +44,7 @@ void Imagen::lee(string nombrefichero){
     }
     istringstream S(linea);
     S >> _ancho >> _alto;
-    int max;
+    int max = 255;
     F >> max; //suponer max es 255
     _pixels.resize((_ancho*_alto));
     for(int i = 0; i < _pixels.size(); i++){
@@ -63,4 +63,16 @@ void Imagen::escribe(string nombrefichero)const{
             F<<endl;
         }
     }
+}
+
+
+void Imagen::suma(Imagen i1, string nombrearchivo){
+    Imagen temp(_ancho, _alto);
+    for(int i=0; i < _pixels.size();i++)
+      {
+        temp.setpixel(i, (_pixels[i] + i1.getpixel(i))/2 );
+      }
+
+    temp.escribe(nombrearchivo);
+
 }

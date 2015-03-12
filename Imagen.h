@@ -21,6 +21,15 @@ class Imagen
         void setpixel(int i, int j, int valor){
             _pixels[j*_ancho+i] = valor;
         }
+        void setpixel(int i, int valor)
+        {
+          _pixels[i] = valor;
+        }
+        int getpixel(int i) const {
+            return _pixels[i];
+        }
+
+        void suma(Imagen,std::string);
         void lee(std::string nombrefichero);
         void escribe(std::string nombrefichero)const;
     protected:
