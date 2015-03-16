@@ -9,3 +9,6 @@
 *.o
 *.so
 *.com
+*.out
+*.cpp~
+*.h~
