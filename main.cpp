@@ -7,36 +7,6 @@
 #include "Imagen.h"
 using namespace std;
 
-void pruebaconstante()
-{
-	Imagen I;
-	I.lee("perro.pgm");
-	I.constante(0.5);
-	I.escribe("constante.pgm");
-}
-
-
-void pruebasuma()
-{
-  Imagen I;
-  Imagen I2;
-  I.lee("figura4.pgm");
-  I2.lee("figura5.pgm");
-  I.suma(I2, "suma4y5.pgm");
-
-}
-
-void pruebamultiplicacion()
-{
-  Imagen I;
-  Imagen I2(225,225);
-  I2.sintetica();	
-  I.lee("perro.pgm");
-  I2.escribe("otro.pgm");
-  //I2.escribe("otro.pgm");
-  I.multiplicacion(I2, "multi4y5.pgm");
-
-}
 
 int main(int argc,char *argv[])
 {
@@ -53,9 +23,9 @@ int main(int argc,char *argv[])
     */
     //pruebasuma();
     pruebamultiplicacion();
-	//pruebaconstante();   
+	//pruebaconstante();
 
-	
+
 	Imagen I(50,50);
 
     	//Contraccion y expansion histograma

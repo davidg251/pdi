@@ -21,28 +21,31 @@ class Imagen
         int ancho() const {return _ancho;}
         int alto() const {return _alto;}
         int getpixel(int i, int j) const {return _pixels[j*_ancho + i];}
-	int getpixel(int i) const {return _pixels[i];}        
-	void setpixel(int i, int j, int valor){_pixels[j*_ancho+i] = valor;}
+	      int getpixel(int i) const {return _pixels[i];}
+	      void setpixel(int i, int j, int valor){_pixels[j*_ancho+i] = valor;}
         void setpixel(int i, int valor){_pixels[i] = valor;}
         void lee(std::string nombrefichero);
         void escribe(std::string nombrefichero)const;
 
 	/* punto 2.2 Operaciones puntuales sobre una sola imagen */
-        void umbralEscalaDegrises(int p1, int p2);
-        void umbralEscalaDegrisesInv(int p1, int p2);
+        void umbralEscalaDegrises(int, int);
+        void umbralEscalaDegrisesInv(int, int);
         void invertir_imagen();
-        void potencia();
-        void transformacionLineal(int a, int c);
-        void operadorUmbral(int p1);
-        void intervaloUmbral(int p1,int p2);
-        void intervaloUmbralInvertido(int p1, int p2);
-        void transformacionLogaritmica(double c);
+        void potencia(double);
+        void transformacionLineal(int, int);
+        void operadorUmbral(int);
+        void intervaloUmbral(int, int );
+        void intervaloUmbralInvertido(int , int);
+        void transformacionLogaritmica(double);
 
 	/* 2.3 Operaciones puntuales entre varias imágenes */
-	void sintetica();
-	void constante(double);
+	      void sintetica();
+	      void constante(double);
         void suma(Imagen,std::string);
+        void resta(Imagen,std::string);
         void multiplicacion(Imagen,std::string);
+        void _and(Imagen,std::string);
+        void _or(Imagen,std::string);
 
 	/* 2.4 Operaciones puntuales globales – Histograma de una imagen */
 	void calculaHistograma();
@@ -56,6 +59,7 @@ class Imagen
     private:
         std::vector<int> _pixels;
         int _ancho, _alto;
+        int max=255;
 
 	 /* 2.4 */
         std::vector<std::vector<double> >tabla;

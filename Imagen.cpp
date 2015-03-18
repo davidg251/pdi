@@ -4,6 +4,7 @@
 */
 
 #include "Imagen.h"
+#include <cmath>
 using namespace std;
 
 Imagen::Imagen() //aqui se llama al constructor de _pixel (por defecto)
@@ -49,7 +50,7 @@ void Imagen::lee(string nombrefichero){
     }
     istringstream S(linea);
     S >> _ancho >> _alto;
-    int max = 255;
+    //int max = 255;
     F >> max; //suponer max es 255
     _pixels.resize((_ancho*_alto));
     for(int i = 0; i < _pixels.size(); i++){
@@ -73,7 +74,7 @@ void Imagen::escribe(string nombrefichero)const{
 
 void Imagen::suma(Imagen i1, string nombrearchivo){
     Imagen temp(_ancho, _alto);
- 	int s = _pixels.size();       
+ 	int s = _pixels.size();
 	for(int i=0; i < s;i++)
       {
         temp.setpixel(i, (_pixels[i] + i1.getpixel(i))/2 );
@@ -82,6 +83,41 @@ void Imagen::suma(Imagen i1, string nombrearchivo){
     temp.escribe(nombrearchivo);
 
 }
+
+void Imagen::resta(Imagen i1, string nombrearchivo){
+    Imagen temp(_ancho, _alto);
+ 	int s = _pixels.size();
+	for(int i=0; i < s;i++)
+      {
+        temp.setpixel(i, (_pixels[i] - i1.getpixel(i))/2 );
+      }
+
+    temp.escribe(nombrearchivo);
+
+}
+
+void Imagen::_and(Imagen i1, string nombrearchivo){
+    Imagen temp(_ancho, _alto);
+ 	int s = _pixels.size();
+	for(int i=0; i < s;i++)
+      {
+        temp.setpixel(i, _pixels[i] && i1.getpixel(i));
+      }
+
+    temp.escribe(nombrearchivo);
+}
+
+void Imagen::_or(Imagen i1, string nombrearchivo){
+    Imagen temp(_ancho, _alto);
+ 	int s = _pixels.size();
+	for(int i=0; i < s;i++)
+      {
+        temp.setpixel(i, _pixels[i] || i1.getpixel(i));
+      }
+
+    temp.escribe(nombrearchivo);
+}
+
 
 void Imagen::multiplicacion(Imagen i1, string nombrearchivo){
     Imagen temp(_ancho, _alto);
@@ -108,7 +144,7 @@ void Imagen::constante(double c)
 
 void Imagen::sintetica()
 {
-	
+
     for(int i=0; i < 20000 ;i++)
       {
         _pixels[i] = 1;
@@ -143,11 +179,8 @@ void Imagen::invertir_imagen(){
     }
 }
 
-void Imagen::potencia(){
+void Imagen::potencia(double gamma){
     int c=3;
-    double gamma=0.0;
-    cout<<"Ingrese el nivel de aclarado(0-1):"<<endl;
-    cin>>gamma;
     for(int i = 0; i < _pixels.size(); i++){
         _pixels[i]=c*(pow(_pixels[i], gamma));
         if(_pixels[i]>255){
@@ -306,4 +339,3 @@ void Imagen::expansionHistograma(int minimo, int maximo){
        _pixels[i] = ( 1.0*(_pixels[i] - menor) / (mayor - menor) ) * (maximo - minimo) + minimo;
     }
 }
-
