@@ -89,7 +89,8 @@ void Imagen::resta(Imagen i1, string nombrearchivo){
  	int s = _pixels.size();
 	for(int i=0; i < s;i++)
       {
-        temp.setpixel(i, (_pixels[i] - i1.getpixel(i))/2 );
+        if((_pixels[i] - i1.getpixel(i))*2 < 0) temp.setpixel(i, 0);
+        else temp.setpixel(i,(_pixels[i] - i1.getpixel(i))*2 );
       }
 
     temp.escribe(nombrearchivo);
@@ -211,7 +212,7 @@ void Imagen::intervaloUmbral(int p1, int p2){
     }
 }
 
-void Imagen::intervaloUmbralInvertido(int p1, int p2){
+void Imagen::intervaloUmbralInv(int p1, int p2){
     for(int i = 0; i < _pixels.size(); i++){
             if( (_pixels[i] <= p1) || (_pixels[i] >= p2) )_pixels[i] = 0;
             if( (p1 < _pixels[i]) && (p2 > _pixels[i])  ) _pixels[i] = max;

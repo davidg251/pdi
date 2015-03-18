@@ -54,6 +54,11 @@ int main(int argc,char *argv[])
           I.operadorUmbral(atoi(argv[3]));
           I.escribe(argv[4]);
         }
+        if(comando == "transformacionlogaritmica")
+        {
+          I.transformacionLogaritmica(atof(argv[3]));
+          I.escribe(argv[4]);
+        }
       break;
 
     case 6:
@@ -84,6 +89,16 @@ int main(int argc,char *argv[])
         I.umbralEscalaDegrisesInv(atoi(argv[3]),atoi(argv[4]));
         I.escribe(argv[5]);
       }
+      if(comando == "intervaloumbral")
+      {
+        I.intervaloUmbral(atoi(argv[3]),atoi(argv[4]));
+        I.escribe(argv[5]);
+      }
+      if(comando == "intervaloumbralinv")
+      {
+        I.intervaloUmbralInv(atoi(argv[3]),atoi(argv[4]));
+        I.escribe(argv[5]);
+      }
       break;
 
     case 4:
@@ -99,6 +114,7 @@ int main(int argc,char *argv[])
         I.invertir_imagen();
         I.escribe(argv[3]);
       }
+
       break;
 
   default:

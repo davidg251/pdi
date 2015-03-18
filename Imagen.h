@@ -35,7 +35,7 @@ class Imagen
         void transformacionLineal(int, int);
         void operadorUmbral(int);
         void intervaloUmbral(int, int );
-        void intervaloUmbralInvertido(int , int);
+        void intervaloUmbralInv(int , int);
         void transformacionLogaritmica(double);
 
 	/* 2.3 Operaciones puntuales entre varias imágenes */
