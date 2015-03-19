@@ -5,6 +5,9 @@
 
 #include "Imagen.h"
 #include <cmath>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+
 using namespace std;
 
 Imagen::Imagen() //aqui se llama al constructor de _pixel (por defecto)
@@ -132,6 +135,18 @@ void Imagen::multiplicacion(Imagen i1, string nombrearchivo){
 
 }
 
+void Imagen::_notand(Imagen i1, string nombrearchivo){
+    Imagen temp(_ancho, _alto);
+	int s = _pixels.size();
+    for(int i=0; i < s ;i++)
+      {
+        temp.setpixel(i, !_pixels[i] && i1.getpixel(i) ) ;
+      }
+
+    temp.escribe(nombrearchivo);
+
+}
+
 
 void Imagen::constante(double c)
 {
@@ -143,14 +158,46 @@ void Imagen::constante(double c)
 }
 
 
-void Imagen::sintetica()
+void Imagen::sintetica(int _ancho, int _alto, string salida1, string salida2)
 {
+  /*perdon por la chambonada.....*/
+  Imagen im(_alto, _ancho);
+  Imagen im2(_alto, _ancho);
+  int v1 = rand() % _ancho;
+  int v2 = rand() % _alto;
+  int v3 = rand() % _alto;
+  int v4 = rand() % _ancho;
+  int l1 = rand() % (int)(_ancho/2);
+  int l2 = rand() % (int)(_alto/2);
 
-    for(int i=0; i < 20000 ;i++)
+  for(int i= 0; i < _alto ;i++)
       {
-        _pixels[i] = 1;
+        for(int j= 0;j< _ancho;j++)
+        {
+          if((i>v1 && i<v1+l1) && (j>v1 && j<v1+l1))
+          {
+            im.setpixel(i,j,255);
+          }
+          if((i>v2 && i<v2+l2) && (j>v2 && j<v2+l2))
+          {
+            im.setpixel(i,j,255);
+          }
+          if((i>v3 && i<v3+l2) && (j>v3 && j<v3+l2))
+          {
+            im2.setpixel(i,j,255);
+          }
+          if((i>v4 && i<v4+l1) && (j>v4 && j<v2+l1))
+          {
+            im2.setpixel(i,j,255);
+          }
+
+
+        }
+
       }
 
+      im.escribe((string)salida1);
+      im2.escribe((string)salida2);
 
 }
 

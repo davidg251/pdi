@@ -30,4 +30,6 @@ umbralescalasinv img constante constante salida
 intervaloumbralinv img constante constante salida
 ecualizacion img salida
 invertir img salida
+sintetica constante constante img img2
+notand img img2 salida
 ```

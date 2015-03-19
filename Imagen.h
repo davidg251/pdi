@@ -39,13 +39,14 @@ class Imagen
         void transformacionLogaritmica(double);
 
 	/* 2.3 Operaciones puntuales entre varias imágenes */
-	      void sintetica();
+	      void sintetica(int,int,std::string,std::string);
 	      void constante(double);
         void suma(Imagen,std::string);
         void resta(Imagen,std::string);
         void multiplicacion(Imagen,std::string);
         void _and(Imagen,std::string);
         void _or(Imagen,std::string);
+        void _notand(Imagen,std::string);
 
 	/* 2.4 Operaciones puntuales globales – Histograma de una imagen */
 	void calculaHistograma();

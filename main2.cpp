@@ -29,6 +29,10 @@ int main(int argc,char *argv[])
           I2.lee(argv[3]);
           I._or(I2,argv[4]);
         }
+      if(comando == "notand"){
+            I2.lee(argv[3]);
+            I._notand(I2,argv[4]);
+        }
       if(comando == "suma"){
           I2.lee(argv[3]);
           I.suma(I2,argv[4]);
@@ -98,6 +102,12 @@ int main(int argc,char *argv[])
       {
         I.intervaloUmbralInv(atoi(argv[3]),atoi(argv[4]));
         I.escribe(argv[5]);
+      }
+      if(comando == "sintetica")
+      {
+        Imagen temp;
+        temp.sintetica(atoi(argv[2]),atoi(argv[3]),argv[4],argv[5]);
+
       }
       break;
 
